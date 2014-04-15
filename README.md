@@ -36,3 +36,31 @@ Instructions:
     the required packages.
 
         pip install -r requirements.txt
+
+## Contributing
+
+1.  [Fork this repository.](https://github.com/malea/formaldatefinder/fork)
+
+2.  Clone your version of the repository.
+
+        git clone https://github.com/YOURUSERNAME/formaldatefinder
+
+3.  Set the upstream to the original repository.
+
+        git remote add upstream https://github.com/malea/formaldatefinder.git
+
+    This allows you to update your master branch with the following command:
+
+        git pull upstream master:master
+
+4.  Develop in a separate feature branch. Create a new branch with:
+
+        git checkout master
+        git checkout -b NEWBRANCH
+
+    Push your changes using:
+
+        git push origin NEWBRANCH:NEWBRANCH
+
+5.  Submit your changes for review as a
+    [Pull Request](https://github.com/malea/formaldatefinder/compare).
