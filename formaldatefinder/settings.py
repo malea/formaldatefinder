@@ -24,7 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
