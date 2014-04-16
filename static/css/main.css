@@ -33,6 +33,11 @@
     font-size: 250%;
 }
 
+.splash form {
+    margin: 0 auto;
+    width: 20%;
+}
+
 strong.highlight {
     color: #2B0F4D;
 }
