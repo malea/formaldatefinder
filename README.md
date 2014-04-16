@@ -1,6 +1,19 @@
 formaldatefinder
 ================
 
+## Easy setup -- Vagrant
+
+1.  Download and install [Vagrant](http://www.vagrantup.com/).
+
+2.  Open a command prompt in the directory for this project. Run the following
+    command to set up the virtual machine:
+
+        vagrant up
+
+3.  You can now start the server by running:
+
+        vagrant ssh -c "cd /vagrant && foreman start"
+
 ## Setup
 
 Instructions:
