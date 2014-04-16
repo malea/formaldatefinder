@@ -65,3 +65,6 @@ Session.vim
 
 # Heroku
 .env
+
+# Vagrant
+.vagrant
