@@ -62,3 +62,6 @@ Session.vim
 
 # OS X files
 .DS_Store
+
+# Heroku
+.env
