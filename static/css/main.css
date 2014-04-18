@@ -1,43 +1,49 @@
-.pure-menu.pure-menu-fixed.main-menu {
-    background: #E6E6E6;
-    border-bottom: none;
-}
-
-.pure-button.signup-button {
-    margin: 2px;
-}
-
-.splash-container {
-    background: #521F8F;
+.menu-container {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    display: inline-block;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
 }
 
-.splash {
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    text-align: center;
-    color: white;
-}
-
-.splash h1 {
-    font-size: 250%;
-}
-
-.splash form {
+.menu {
+    max-width: 960px;
     margin: 0 auto;
-    width: 20%;
 }
 
-strong.highlight {
-    color: #2B0F4D;
+.menu a.heading {
+    font-weight: bold;
+}
+
+.menu ul {
+    display: inline;
+}
+
+.menu li  {
+    display: inline;
+}
+
+.menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.menu a:hover {
+    background: lightGray;
+}
+
+.promo-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.disclaimer {
+    background: #FAE6AC;
+    color: #444;
+    font-size: 80%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    width: 100%;
 }
