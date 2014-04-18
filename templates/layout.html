@@ -7,7 +7,7 @@
     <title>{% block title %}FormalDateFinder.com{% endblock %}</title>
     <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <link rel="stylesheet" href="/static/css/normalize.css">
     <link rel="stylesheet" href="/static/css/main.css">
 
     <!--[if lt IE 9]>
@@ -16,12 +16,16 @@
 </head>
 
 <body>
-    <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed main-menu">
-        <a href="/" class="pure-menu-heading">FormalDateFinder.com</a>
-        <ul>
-            <li><a href="#">Sign up</a></li>
-            <li><a href="#">Login</a></li>
-        </ul>
+    <div class="disclaimer">
+        <p>FormalDateFinder.com is not yet fully operational. Coming soon!</p>
+    </div>
+    <div class="menu-container">
+        <div class="menu">
+            <a class="heading" href="/">FormalDateFinder.com</a>
+            <ul>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </div>
     </div>
     {% block content %}
     {% endblock %}
