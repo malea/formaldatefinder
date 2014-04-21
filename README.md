@@ -35,6 +35,8 @@ Instructions:
 
     This will create a folder called `formaldatefinder`.
 
+        cd formaldatefinder
+
 3.  Create a Python [virtual
     environment](https://docs.python.org/3/library/venv.html) in the project
     folder.
