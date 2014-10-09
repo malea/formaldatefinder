@@ -4,11 +4,22 @@
 
 {% block content %}
 
-    <div class="promo-content">
-       <form class="signup-form" action="javascript:void;">
-           <h1>Sign up now.</h1>
-           <button type="submit">Sign up</button>
-       </form>
+    <div class="splash-container">
+        <div class="splash">
+            <h1>Find a date to formal.</h1>
+            <p>
+               <form class="pure-form pure-form-stacked">
+                   <input id="school" type="text" placeholder="School">
+               </form>
+               <br/>
+                <a class="pure-button signup-button" href="#">
+                    Looking for a <strong class="highlight">date</strong>
+                </a>
+                <a class="pure-button signup-button" href="#">
+                    Looking for a <strong class="highlight">formal</strong>
+                </a>
+            </p>
+        </div>
     </div>
 
 {% endblock %}
