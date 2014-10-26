@@ -32,6 +32,9 @@
                 if (response.status === 'connected') {
                     FB.api('/me', function(response) {
                         console.log('Logged in as ' + response.name + '.');
+                        var element = document.getElementById("logged-in");
+                        element.innerHTML = "Welcome, " + response.name + "!";
+                        element.style.color = "blue";
                     });
                 }
                 else if (response.status === 'not_authorized') {
@@ -62,7 +65,7 @@
             <ul>
                 <li><a href="/upcoming/">View Upcoming Events</a></li>
                 <li><a href="/register/">Register an Event</a></li>
-                <li><a href="javascript: FB.login()">Login</a></li>
+                <li id='logged-in'><a href="javascript: FB.login()">Login</a></li>
             </ul>
         </div>
     </div>
