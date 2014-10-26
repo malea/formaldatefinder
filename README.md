@@ -12,7 +12,7 @@ formaldatefinder
 
 3.  You can now start the server by running:
 
-        vagrant ssh -c "cd /vagrant && foreman start"
+        vagrant ssh -c "cd /vagrant && foreman start" 
 
 ## Setup
 
