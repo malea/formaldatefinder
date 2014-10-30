@@ -9,6 +9,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 def register(request):
+    if request.method == 'POST':
+        return HttpResponse('Thanks!')
     return render(request, 'register.html')
 
 def upcoming(request):

@@ -2,10 +2,60 @@
 
 {% block title %} Register - FormalDateFinder.com {% endblock %}
 
-{% block content %}
 
-<p>
-Add form here once styling is implemented!
-</p>
+{% block content %}
+<form class="form-horizontal" method="POST">
+  {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend>Register</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="event_name">Event Name</label>
+  <div class="controls">
+    <input id="event_name" name="event_name" type="text" placeholder="My Formal Dinner" class="input-xlarge" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="event_date">Event Date</label>
+  <div class="controls">
+    <input id="event_date" name="event_date" type="text" placeholder="09/01/2014" class="input-xlarge" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="sponsor">Sponsor</label>
+  <div class="controls">
+    <input id="sponsor" name="sponsor" type="text" placeholder="FIJI" class="input-xlarge" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="location">Location</label>
+  <div class="controls">
+    <input id="location" name="location" type="text" placeholder="111 Burdett Ave" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="submit-button"></label>
+  <div class="controls">
+    <button id="submit-button" name="submit-button" class="btn btn-success">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
 
 {% endblock %}
