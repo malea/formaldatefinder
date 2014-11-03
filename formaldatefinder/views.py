@@ -10,7 +10,10 @@ def index(request):
 
 def register(request):
     if request.method == 'POST':
-        return HttpResponse('Thanks!')
+        data = ""
+        for k,v in request.POST.items():
+            data += k + " : " + v + "\n"
+        return HttpResponse(data)
     return render(request, 'register.html')
 
 def upcoming(request):
