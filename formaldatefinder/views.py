@@ -24,4 +24,5 @@ def upcoming(request):
     }
     return render(request, 'upcoming.html', context)
 
-
+def event(request, event_id):
+    return HttpResponse("looking at event {}".format(event_id))
