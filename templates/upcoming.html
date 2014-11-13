@@ -4,14 +4,24 @@
 {% block content %}
 
 {% if all_events %}
-<ul>
+<table class="table table-bordered">
+<thead>
+<tr><th>Event Name</th><th>Event Date</th>
+<th>Event Sponsor</th><th>Event Location</th></tr>
+</thead>
+
+<tbody>
+
   {% for e in all_events %}
-  <li> {{ e.event_name }} happening on {{ e.event_date }} </li>
+<tr><td>{{ e.event_name }}</td><td>{{ e.event_date }}</td>
+<td>{{ e.sponsor }}</td><td>{{ e.location }}</td></tr>
   {% endfor %}
-</ul>
+
+</tbody></table>
 
 {% else %}
 <p> Add some events and check back here! </p>
 {% endif %}
 
 {% endblock %}
+
