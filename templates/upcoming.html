@@ -13,7 +13,7 @@
 <tbody>
 
   {% for e in all_events %}
-<tr><td>{{ e.event_name }}</td><td>{{ e.event_date }}</td>
+  <tr><td><a href="/event/{{ e.id }}">{{ e.event_name }}</a></td><td>{{ e.event_date }}</td>
 <td>{{ e.sponsor }}</td><td>{{ e.location }}</td></tr>
   {% endfor %}
 
