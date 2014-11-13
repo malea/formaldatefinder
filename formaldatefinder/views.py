@@ -20,7 +20,7 @@ def register(request):
 
 def upcoming(request):
     context = {
-        'all_events' : Event.objects.all()
+        'all_events' : Event.objects.all().order_by('-event_date')
     }
     return render(request, 'upcoming.html', context)
 
