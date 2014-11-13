@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from os import getenv
 
+from formaldatefinder.models import EventForm
+from formaldatefinder.models import Event
+
 def index(request):
     context = {
         'fb_app_id': getenv('FB_APP_ID')
@@ -10,13 +13,15 @@ def index(request):
 
 def register(request):
     if request.method == 'POST':
-        data = ""
-        for k,v in request.POST.items():
-            data += k + " : " + v + "\n"
-        return HttpResponse(data)
+        f = EventForm(request.POST)
+        new_event = f.save()
+        #return render(request, 'register.html') 
     return render(request, 'register.html')
 
 def upcoming(request):
-    return render(request, 'upcoming.html')
+    context = {
+        'all_events' : Event.objects.all()
+    }
+    return render(request, 'upcoming.html', context)
 
 
