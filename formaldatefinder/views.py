@@ -3,6 +3,7 @@ from django.shortcuts import render
 from os import getenv
 
 from formaldatefinder.models import EventForm
+from formaldatefinder.models import Event
 
 def index(request):
     context = {
@@ -14,10 +15,13 @@ def register(request):
     if request.method == 'POST':
         f = EventForm(request.POST)
         new_event = f.save()
-        return HttpResponse('Saved to Database!')
+        #return render(request, 'register.html') 
     return render(request, 'register.html')
 
 def upcoming(request):
-    return render(request, 'upcoming.html')
+    context = {
+        'all_events' : Event.objects.all()
+    }
+    return render(request, 'upcoming.html', context)
 
 

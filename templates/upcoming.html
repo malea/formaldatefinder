@@ -1,11 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %} Register - FormalDateFinder.com {% endblock %}
-
 {% block content %}
 
-<p>
-Add list of upcoming events once styling is implemented!
-</p>
+{% if all_events %}
+<ul>
+  {% for e in all_events %}
+  <li> {{ e.event_name }} happening on {{ e.event_date }} </li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p> Add list of upcoming events once styling is implemented! </p>
+
+{% endif %}
 
 {% endblock %}
