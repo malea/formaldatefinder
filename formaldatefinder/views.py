@@ -35,4 +35,10 @@ def event(request, event_id):
         return HttpResponse("Event {} does not exist".format(
             event_id))
 
-    return HttpResponse("looking at event {}".format(e.id))
+    context = {
+            'name' : e.event_name,
+            'date' : e.event_date, 
+            'sponsor' : e.sponsor, 
+            'location' : e.location
+            }
+    return render(request, 'event.html', context)
