@@ -20,9 +20,25 @@ def register(request):
 
 def upcoming(request):
     context = {
-        'all_events' : Event.objects.all()
+        'all_events' : Event.objects.all().order_by('-event_date')
     }
     return render(request, 'upcoming.html', context)
 
 def event(request, event_id):
-    return HttpResponse("looking at event {}".format(event_id))
+
+    # Query the database for this event
+    try:
+        e = Event.objects.get(id=event_id)
+
+    # If the event does not exist, exit gracefully
+    except Event.DoesNotExist:
+        return HttpResponse("Event {} does not exist".format(
+            event_id))
+
+    context = {
+            'name' : e.event_name,
+            'date' : e.event_date, 
+            'sponsor' : e.sponsor, 
+            'location' : e.location
+            }
+    return render(request, 'event.html', context)
