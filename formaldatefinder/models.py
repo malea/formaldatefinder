@@ -1,11 +1,16 @@
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
-class Poll(models.Model):
-    question = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+class Event(models.Model):
+    event_name = models.CharField(max_length=144)
+    event_date = models.DateField()
+    sponsor = models.CharField(max_length=144)
+    location = models.CharField(max_length=144)
 
-class Choice(models.Model):
-    poll = models.ForeignKey(Poll)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+class EventForm(ModelForm):
+    class Meta:
+        model = Event
+        fields = ['event_name', 'event_date', 'sponsor', 'location']
+
+
