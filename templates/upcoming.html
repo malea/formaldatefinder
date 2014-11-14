@@ -4,10 +4,11 @@
 {% block content %}
 
 {% if all_events %}
-<table class="table table-bordered">
+<div class="container">
+<table class="table table-bordered" id="event-table" align="center">
 <thead>
-<tr><th>Event Name</th><th>Event Date</th>
-<th>Event Sponsor</th><th>Event Location</th></tr>
+<tr><th>Event</th><th>Date</th>
+<th>Sponsor</th><th>Location</th></tr>
 </thead>
 
 <tbody>
@@ -17,7 +18,8 @@
 <td>{{ e.sponsor }}</td><td>{{ e.location }}</td></tr>
   {% endfor %}
 
-</tbody></table>
+</tbody></table></div>
+
 
 {% else %}
 <p> Add some events and check back here! </p>

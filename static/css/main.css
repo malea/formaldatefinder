@@ -81,3 +81,13 @@ label .control-label{
   background: #FEE;
 }
 
+#event-table {
+  border: 2px solid;
+  border-radius: 25px;
+}
+
+#event-table th {
+  font-size: 200%;
+  text-align: center;
+}
+
