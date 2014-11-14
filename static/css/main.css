@@ -51,6 +51,33 @@
 #logged-in {
 }
 
-form {
+#submit-button {
+  font-size: 120%;
+}
+
+#register-legend{
+    text-align: center;
+    padding: 20px;
+    font-size: 300%;
+    width: 100%;
+}
+
+.control-group {
+  padding: 5px;
+  font-size: 200%;
+}
+
+label .control-label{
+  text-align: left;
+}
+
+.container{
+  padding: 20px;
+}
+
+.form-horizontal{
+  border: 2px solid;
+  border-radius: 25px;
+  background: #FEE;
 }
 

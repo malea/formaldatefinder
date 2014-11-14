@@ -4,12 +4,13 @@
 
 
 {% block content %}
+<div class="container" align="center">
 <form class="form-horizontal" method="POST">
   {% csrf_token %}
 <fieldset>
 
 <!-- Form Name -->
-<legend>Register</legend>
+<legend id="register-legend">Register a New Event!</legend>
 
 <!-- Text input-->
 <div class="control-group">
@@ -57,5 +58,6 @@
 
 </fieldset>
 </form>
+</div>
 
 {% endblock %}
