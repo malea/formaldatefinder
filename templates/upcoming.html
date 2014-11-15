@@ -14,7 +14,14 @@
 <tbody>
 
   {% for e in all_events %}
-  <tr><td><a href="/event/{{ e.id }}">{{ e.event_name }}</a></td><td>{{ e.event_date }}</td>
+
+  {% if e.is_upcoming %}
+  <tr class="upcoming-event">
+    {% else %}
+  <tr class="archived-event">
+    {% endif %}
+
+  <td><a href="/event/{{ e.id }}">{{ e.event_name }}</a></td><td>{{ e.event_date }}</td>
 <td>{{ e.sponsor }}</td><td>{{ e.location }}</td></tr>
   {% endfor %}
 
