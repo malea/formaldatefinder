@@ -91,3 +91,11 @@ label .control-label{
   text-align: center;
 }
 
+.upcoming-event {
+  background: #DAFFCE; 
+}
+
+.archived-event {
+  background: #FEE;
+}
+
