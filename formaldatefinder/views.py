@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from os import getenv
 
+from django.views.decorators.csrf import csrf_exempt
+
 from formaldatefinder.models import EventForm
 from formaldatefinder.models import Event
 
@@ -43,6 +45,11 @@ def event(request, event_id):
             }
     return render(request, 'event.html', context)
 
+@csrf_exempt
 def api(request):
+
     if request.method != 'POST':
         return HttpResponse('POST requests only')
+
+    else:
+        return HttpResponse(request)
