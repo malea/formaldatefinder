@@ -48,7 +48,7 @@
 
 
                         $.post("/api/", 
-                          {'id': response.id }, 
+                          {'type': 'User', 'fid': response.id }, 
                           function(data, status){
                           console.log("POST successful. ID: " + response.id);
                           });

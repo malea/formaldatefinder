@@ -4,8 +4,7 @@ from os import getenv
 
 from django.views.decorators.csrf import csrf_exempt
 
-from formaldatefinder.models import EventForm
-from formaldatefinder.models import Event
+from formaldatefinder.models import EventForm, Event, User
 
 def index(request):
     context = {
@@ -51,5 +50,15 @@ def api(request):
     if request.method != 'POST':
         return HttpResponse('POST requests only')
 
-    else:
-        return HttpResponse(request)
+
+    # Handle requests of type 'User', which save user objects to the DB
+    if request.POST.get('type') == 'User':
+        id_ = str(request.POST.get('fid'))
+        try:
+            u = User.objects.get(fid = id_)
+
+        except:
+            u = User(fid=id_)
+            u.save()
+
+    return HttpResponse(request)
