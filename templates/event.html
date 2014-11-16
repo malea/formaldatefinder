@@ -11,9 +11,12 @@
 <h2> Location: {{ e.location }} </h2>
 <h2> Who's Going: </h2>
 {% for user in e.user_set.all %}
-<img src="https://graph.facebook.com/{{ user.fid }}/picture?width=300">
+<a href="https://graph.facebook.com/{{ user.fid }}/home" target="_blank">
+	<img src="https://graph.facebook.com/{{ user.fid }}/picture?width=300" title="https://graph.facebook.com/{{ user.fid }}/name">
+</a>
 {% endfor %}
 <br>
+
 <button type="button" class="btn btn-default navbar-btn" 
   onClick="Rsvp({{e.id}});window.location.reload()">
   I'm Going!</button>
