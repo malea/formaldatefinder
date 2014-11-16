@@ -42,3 +42,7 @@ def event(request, event_id):
             'location' : e.location
             }
     return render(request, 'event.html', context)
+
+def api(request):
+    if request.method != 'POST':
+        return HttpResponse('POST requests only')
