@@ -13,6 +13,7 @@ class Event(models.Model):
     sponsor = models.CharField(max_length=144)
     location = models.CharField(max_length=144)
 
+
     def is_upcoming(self):
         return self.event_date > date.today()
 
@@ -32,5 +33,6 @@ class User(models.Model):
     The fid is the unique string that identifies a unique user of
     Facebook.'''
     fid = models.CharField(max_length=144)
+    event = models.ForeignKey(Event)
 
 
