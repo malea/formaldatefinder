@@ -54,7 +54,10 @@ def api(request):
     e = Event.objects.get(id=eid_)
 
     # Add the user as an attendee to the event, if he isn't there already
-    if not e.user_set.get(fid=fid_):
+    try:
+        exists = e.user_set.get(fid=fid_)
+
+    except:
         u = User(fid=fid_)
         u.event = e
         u.save()

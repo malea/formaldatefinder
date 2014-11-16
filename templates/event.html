@@ -5,16 +5,17 @@
 
 
 {% block content %}
+<button type="button" class="btn btn-default navbar-btn" 
+  onClick="Rsvp({{e.id}});window.location.reload()">
+  Register</button>
 
 <h1> Event: {{ e.event_name }} </h1>
 <h2> Date: {{ e.event_date }} </h2>
 <h2> Sponsor: {{ e.sponsor }} </h2>
 <h2> Location: {{ e.location }} </h2>
-<button type="button" class="btn btn-default navbar-btn" onClick="Rsvp({{e.id}})">
-  Register</button>
 
 {% for user in e.user_set.all %}
-<p> {{ user.fid }} <p>
+<img src="https://graph.facebook.com/{{ user.fid }}/picture?width=300">
 {% endfor %}
 
 {% endblock %}

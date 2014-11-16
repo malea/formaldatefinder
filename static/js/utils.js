@@ -8,7 +8,9 @@ FB.getLoginStatus(function(response) {
       function(data, status){
         console.log("POST successful.  " + event_id + "/" + uid);
       });
-  } 
+  } else {
+  alert("Please log in first!");
+  }
  });
  
  };
