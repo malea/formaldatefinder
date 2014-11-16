@@ -13,8 +13,15 @@ class Event(models.Model):
     sponsor = models.CharField(max_length=144)
     location = models.CharField(max_length=144)
 
+
     def is_upcoming(self):
         return self.event_date > date.today()
+
+class Attendee(models.Model):
+    """ An attendee to an Event. Stores facebook uid"""
+    event = models.ForeignKey(Event)
+    fid = models.CharField(max_length=144)
+
 
 class EventForm(ModelForm):
     '''The Event Form allows a user to create a new event.
