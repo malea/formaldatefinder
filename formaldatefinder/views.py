@@ -37,6 +37,7 @@ def event(request, event_id):
             event_id))
 
     context = {
+            'id': e.id,
             'name' : e.event_name,
             'date' : e.event_date, 
             'sponsor' : e.sponsor, 
@@ -50,15 +51,15 @@ def api(request):
     if request.method != 'POST':
         return HttpResponse('POST requests only')
 
+    fid_ = str(request.POST.get('fid'))
+    eid_ = str(request.POST.get('eid'))
 
-    # Handle requests of type 'User', which save user objects to the DB
-    if request.POST.get('type') == 'User':
-        id_ = str(request.POST.get('fid'))
-        try:
-            u = User.objects.get(fid = id_)
+    # Get the appropriate Event object
+    e = Event.objects.get(id=eid_)
 
-        except:
-            u = User(fid=id_)
-            u.save()
+    # Add the user as an attendee to the event
+    u = User(fid=fid_)
+    u.event = e
+    u.save()
 
     return HttpResponse(request)

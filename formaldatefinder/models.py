@@ -17,12 +17,6 @@ class Event(models.Model):
     def is_upcoming(self):
         return self.event_date > date.today()
 
-class Attendee(models.Model):
-    """ An attendee to an Event. Stores facebook uid"""
-    event = models.ForeignKey(Event)
-    fid = models.CharField(max_length=144)
-
-
 class EventForm(ModelForm):
     '''The Event Form allows a user to create a new event.
 
@@ -39,5 +33,6 @@ class User(models.Model):
     The fid is the unique string that identifies a unique user of
     Facebook.'''
     fid = models.CharField(max_length=144)
+    event = models.ForeignKey(Event)
 
 
