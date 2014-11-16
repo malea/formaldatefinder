@@ -53,9 +53,10 @@ def api(request):
     # Get the appropriate Event object
     e = Event.objects.get(id=eid_)
 
-    # Add the user as an attendee to the event
-    u = User(fid=fid_)
-    u.event = e
-    u.save()
+    # Add the user as an attendee to the event, if he isn't there already
+    if not e.user_set.get(fid=fid_):
+        u = User(fid=fid_)
+        u.event = e
+        u.save()
 
     return HttpResponse(request)
