@@ -14,6 +14,9 @@ urlpatterns = patterns('',
     # /admin
     url(r'^admin/', include(admin.site.urls)),
 
+    # /api
+    url(r'^api/', 'formaldatefinder.views.api'),
+
     # /register
     url(r'^register/', 'formaldatefinder.views.register', name='register'),
 

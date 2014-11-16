@@ -45,6 +45,14 @@
                         var element = document.getElementById("logged-in");
                         element.innerHTML = "Welcome, " + response.name + "!";
                         element.style.color = "blue";
+
+
+                        $.post("/api/", 
+                          {'type': 'User', 'fid': response.id }, 
+                          function(data, status){
+                          console.log("POST successful. ID: " + response.id);
+                          });
+
                     });
                 }
                 else if (response.status === 'not_authorized') {

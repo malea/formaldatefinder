@@ -2,8 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from os import getenv
 
-from formaldatefinder.models import EventForm
-from formaldatefinder.models import Event
+from django.views.decorators.csrf import csrf_exempt
+
+from formaldatefinder.models import EventForm, Event, User
 
 def index(request):
     context = {
@@ -42,3 +43,22 @@ def event(request, event_id):
             'location' : e.location
             }
     return render(request, 'event.html', context)
+
+@csrf_exempt
+def api(request):
+
+    if request.method != 'POST':
+        return HttpResponse('POST requests only')
+
+
+    # Handle requests of type 'User', which save user objects to the DB
+    if request.POST.get('type') == 'User':
+        id_ = str(request.POST.get('fid'))
+        try:
+            u = User.objects.get(fid = id_)
+
+        except:
+            u = User(fid=id_)
+            u.save()
+
+    return HttpResponse(request)
