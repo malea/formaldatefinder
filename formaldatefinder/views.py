@@ -37,11 +37,7 @@ def event(request, event_id):
             event_id))
 
     context = {
-            'id': e.id,
-            'name' : e.event_name,
-            'date' : e.event_date, 
-            'sponsor' : e.sponsor, 
-            'location' : e.location
+            'e': e
             }
     return render(request, 'event.html', context)
 

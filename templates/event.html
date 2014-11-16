@@ -6,10 +6,15 @@
 
 {% block content %}
 
-<h1> Event: {{ name }} </h1>
-<h2> Date: {{ date }} </h2>
-<h2> Sponsor: {{ sponsor }} </h2>
-<h2> Location: {{ location }} </h2>
-<button type="button" class="btn btn-default navbar-btn" onClick="Rsvp({{id}})">
+<h1> Event: {{ e.event_name }} </h1>
+<h2> Date: {{ e.event_date }} </h2>
+<h2> Sponsor: {{ e.sponsor }} </h2>
+<h2> Location: {{ e.location }} </h2>
+<button type="button" class="btn btn-default navbar-btn" onClick="Rsvp({{e.id}})">
   Register</button>
+
+{% for user in e.user_set.all %}
+<p> {{ user.fid }} <p>
+{% endfor %}
+
 {% endblock %}
