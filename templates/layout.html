@@ -47,13 +47,6 @@
                         element.innerHTML = "Welcome, " + response.name + "!";
                         element.style.color = "blue";
 
-                        /*
-                        $.post("/api/", 
-                          {'type': 'User', 'fid': response.id }, 
-                          function(data, status){
-                          console.log("POST successful. ID: " + response.id);
-                          });
-                       */
                     });
                 }
                 else if (response.status === 'not_authorized') {
@@ -82,7 +75,7 @@
                 <li><a href="/upcoming/">View Upcoming Events</a></li>
                 <li><a href="/register/">Register an Event</a></li>
                 <li id='logged-in'> <button onclick="javascript: FB.login()" class="btn btn-success">Login</button> </li>
-                <li> <button class="btn btn-danger">Logout</button> </li>
+                <li> <button onclick="javascript: FB.logout(); window.location.assign('/');" class="btn btn-danger">Logout</button> </li>
             </ul>
         </div>
     </div>
