@@ -4,26 +4,32 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'formaldatefinder.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+                       # Examples:
+                       # url(r'^$', 'formaldatefinder.views.home', name='home'),
+                       # url(r'^blog/', include('blog.urls')),
 
-    #/
-    url(r'^$', 'formaldatefinder.views.index', name='index'),
+                       #/
+                       url(r'^$',
+                           'formaldatefinder.views.index',
+                           name='index'),
 
-    # /admin
-    url(r'^admin/', include(admin.site.urls)),
+                       # /admin
+                       url(r'^admin/', include(admin.site.urls)),
 
-    # /api
-    url(r'^api/', 'formaldatefinder.views.api'),
+                       # /api
+                       url(r'^api/', 'formaldatefinder.views.api'),
 
-    # /register
-    url(r'^register/', 'formaldatefinder.views.register', name='register'),
+                       # /register
+                       url(r'^register/',
+                           'formaldatefinder.views.register',
+                           name='register'),
 
-    # /upcoming
-    url(r'^upcoming/', 'formaldatefinder.views.upcoming', name='upcoming'),
+                       # /upcoming
+                       url(r'^upcoming/',
+                           'formaldatefinder.views.upcoming',
+                           name='upcoming'),
 
-    # /event/10
-    url(r'^event/(?P<event_id>\d+)/$', 'formaldatefinder.views.event', 
-      name='detail'),
-)
+                       # /event/10
+                       url(r'^event/(?P<event_id>\d+)/$', 'formaldatefinder.views.event',
+                           name='detail'),
+                       )
