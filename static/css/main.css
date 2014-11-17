@@ -118,3 +118,17 @@ img {
   margin-bottom:20px;
 }
 
+#going-button{
+  float:right;
+  font-size: 150%;
+}
+
+#event-box {
+  border: 2px solid;
+  border-radius: 25px;
+}
+
+#user-picture-box {
+  border: 2px solid;
+  border-radius: 25px;
+}
