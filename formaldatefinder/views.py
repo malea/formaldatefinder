@@ -6,24 +6,28 @@ from django.views.decorators.csrf import csrf_exempt
 
 from formaldatefinder.models import EventForm, Event, User
 
+
 def index(request):
     context = {
         'fb_app_id': getenv('FB_APP_ID')
     }
     return render(request, 'index.html', context)
 
+
 def register(request):
     if request.method == 'POST':
         f = EventForm(request.POST)
         new_event = f.save()
-        #return render(request, 'register.html') 
+        # return render(request, 'register.html')
     return render(request, 'register.html')
+
 
 def upcoming(request):
     context = {
-        'all_events' : Event.objects.all().order_by('-event_date')
+        'all_events': Event.objects.all().order_by('-event_date')
     }
     return render(request, 'upcoming.html', context)
+
 
 def event(request, event_id):
 
@@ -37,9 +41,10 @@ def event(request, event_id):
             event_id))
 
     context = {
-            'e': e
-            }
+        'e': e
+    }
     return render(request, 'event.html', context)
+
 
 @csrf_exempt
 def api(request):
