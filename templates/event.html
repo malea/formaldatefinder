@@ -5,16 +5,24 @@
 
 
 {% block content %}
+<div class="container">
 <h1> Event: {{ e.event_name }} </h1>
 <h2> Date: {{ e.event_date }} </h2>
 <h2> Sponsor: {{ e.sponsor }} </h2>
 <h2> Location: {{ e.location }} </h2>
 <h2> Who's Going: </h2>
+
+  <ul class="row">
 {% for user in e.user_set.all %}
+<!-- <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> -->
+<li class="col-md-3 col-sm-4 col-xs-6">
 <a href="https://graph.facebook.com/{{ user.fid }}/home" target="_blank">
-	<img src="https://graph.facebook.com/{{ user.fid }}/picture?width=300" title="https://graph.facebook.com/{{ user.fid }}/name">
+	<img class="img-responsive" src="https://graph.facebook.com/{{ user.fid }}/picture?width=200" title="https://graph.facebook.com/{{ user.fid }}/name">
 </a>
+</li>
 {% endfor %}
+  </ul>
+</div>
 <br>
 
 <button type="button" class="btn btn-default navbar-btn" 

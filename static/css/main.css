@@ -1,51 +1,51 @@
 .menu-container {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    display: inline-block;
-    width: 100%;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: inline-block;
+  width: 100%;
 }
 
 .menu {
-    max-width: 960px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .menu a.heading {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .menu ul {
-    display: inline;
+  display: inline;
 }
 
 .menu li  {
-    display: inline;
+  display: inline;
 }
 
 .menu a {
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
 }
 
 .menu a:hover {
-    background: lightGray;
+  background: lightGray;
 }
 
 .promo-content {
-    max-width: 960px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .disclaimer {
-    background: #FAE6AC;
-    color: #444;
-    font-size: 80%;
-    text-align: center;
-    border-bottom: 1px solid black;
-    display: inline-block;
-    width: 100%;
+  background: #FAE6AC;
+  color: #444;
+  font-size: 80%;
+  text-align: center;
+  border-bottom: 1px solid black;
+  display: inline-block;
+  width: 100%;
 }
 
 #logged-in {
@@ -56,10 +56,10 @@
 }
 
 #register-legend{
-    text-align: center;
-    padding: 20px;
-    font-size: 300%;
-    width: 100%;
+  text-align: center;
+  padding: 20px;
+  font-size: 300%;
+  width: 100%;
 }
 
 .control-group {
@@ -97,5 +97,24 @@ label .control-label{
 
 .archived-event {
   background: #FEE;
+}
+
+ul {         
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+}
+ul li {     
+  list-style:none;
+  margin-bottom:25px;           
+}
+ul li img {
+  cursor: pointer;
+}
+
+img {
+  -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+  margin-bottom:20px;
 }
 
