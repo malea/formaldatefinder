@@ -30,6 +30,24 @@
 
     <div id="fb-root"></div>
     <script>
+
+        var mapToDom;
+
+        mapToDom = function(response) {
+          var k, v, _results;
+          _results = [];
+          for (k in response) {
+            v = response[k];
+            if ($("#" + k).length !== 0) {
+              _results.push($("#" + k).text(v));
+            } else {
+              _results.push(void 0);
+            }
+          }
+          return _results;
+        };
+
+
         window.fbAsyncInit = function() {
             FB.init({
                 //appId: '{{ fb_app_id }}',
@@ -39,6 +57,13 @@
                 version:'v2.0'
             });
 
+            /*SomeRequest("facebook.fuckyou", function(response){
+                var photoUrl = response.photoUrl;
+                $(".circle-image").css({"background-image": photoUrl});
+                var photoCaption = response.photoCaption;
+                $(".photo-caption").text(photoCaption);
+            });*/
+
             FB.Event.subscribe('auth.authResponseChange', function(response) {
                 if (response.status === 'connected') {
                     FB.api('/me', function(response) {
@@ -46,15 +71,20 @@
                         var element = document.getElementById("logged-in");
                         element.innerHTML = "Welcome, " + response.name + "!";
                         element.style.color = "blue";
-
-                        /*
-                        $.post("/api/", 
-                          {'type': 'User', 'fid': response.id }, 
-                          function(data, status){
-                          console.log("POST successful. ID: " + response.id);
-                          });
-                       */
+                        console.log(response);
+                        mapToDom(response);
                     });
+                    /* make the API call */
+                    FB.api(
+                        "/me/picture",
+                        function (response) {
+                          if (response && !response.error) {
+                            /* handle the result */
+                            console.log(response);
+                            $(".circle-image").css({"background-image": photoUrl});
+                          }
+                        }
+                    );
                 }
                 else if (response.status === 'not_authorized') {
                     FB.login();
@@ -64,13 +94,19 @@
                 }
             });
 
+            FB.getLoginStatus(function(response){
+                if (response.status == 'connected') {
+                    console.log(response);
+                }
+            });
+
         };
 
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
             js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.com/en_US/sdk.js";
+            js.src = "https://connect.facebook.com/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
@@ -81,6 +117,7 @@
             <ul>
                 <li><a href="/upcoming/">View Upcoming Events</a></li>
                 <li><a href="/register/">Register an Event</a></li>
+                <li><a href="/profile/">Profile</a></li>
                 <li id='logged-in'><a href="javascript: FB.login()">Login</a></li>
             </ul>
         </div>

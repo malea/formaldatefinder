@@ -19,6 +19,9 @@ def register(request):
         #return render(request, 'register.html') 
     return render(request, 'register.html')
 
+def profile(request):
+    return render(request, 'profile.html')
+
 def upcoming(request):
     context = {
         'all_events' : Event.objects.all().order_by('-event_date')

@@ -22,6 +22,9 @@ urlpatterns = patterns('',
 
     # /upcoming
     url(r'^upcoming/', 'formaldatefinder.views.upcoming', name='upcoming'),
+                       
+   # /Profile
+   url(r'^profile/', 'formaldatefinder.views.profile', name='profile'),
 
     # /event/10
     url(r'^event/(?P<event_id>\d+)/$', 'formaldatefinder.views.event', 
