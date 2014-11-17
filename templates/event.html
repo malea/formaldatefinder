@@ -28,7 +28,7 @@
 {% for user in e.user_set.all %}
 <!-- <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> -->
 <li class="col-md-3 col-sm-4 col-xs-6">
-<a href="http://facebook.com/profile.php?id={{ user.fid }}" target="_blank">
+<a href="http://facebook.com/profile.php?id={{user.fid}}/">
 	<img class="img-responsive" 
   src="https://graph.facebook.com/{{ user.fid }}/picture?width=200" 
   title="https://graph.facebook.com/{{ user.fid }}/name">
