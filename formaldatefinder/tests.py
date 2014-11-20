@@ -23,6 +23,10 @@ class EventTestCase(TestCase):
             location="Mars"
         )
 
+
+    ## TODO add unit test using mock objects to fix output of 
+    ## datetime.date.today(). This way, unit testing will not break 
+    ## in the future. 
     def test_upcoming(self):
         """
         The old event is not upcoming.
