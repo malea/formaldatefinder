@@ -1,5 +1,8 @@
 function Rsvp(event_id){
 
+/* Send FacebookID 'fid' and EventID 'eid' from the client
+to the server using the formaldatefinder API */
+
 FB.getLoginStatus(function(response) {
   if (response.status === 'connected') {
     var uid = response.authResponse.userID;
