@@ -16,7 +16,6 @@ class EventTestCase(TestCase):
             sponsor="FIJI",
             location="Electric Ave."
         )
-
         Event.objects.create(
             event_name="WhyYouMufasa",
             event_date=date(3005, 1, 1),

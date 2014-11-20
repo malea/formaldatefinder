@@ -21,13 +21,14 @@
 
 <br>
 
+<!-- Displays who is going in a nice grid -->
 <div class="container" id="user-picture-box">
 <h2> Who's Going: </h2>
 <br>
   <ul class="row">
 {% for user in e.user_set.all %}
-<!-- <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4"> -->
 <li class="col-md-3 col-sm-4 col-xs-6">
+<!-- Fetches profile pic and links it to the users FB page -->
 <a href="http://facebook.com/profile.php?id={{user.fid}}/" target="_blank">
 	<img class="img-responsive" 
   src="https://graph.facebook.com/{{ user.fid }}/picture?width=200" 
